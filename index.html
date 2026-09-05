@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Classificador de ICP</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+
+    <header class="cabecalho">
+      <div class="cabecalho-meta">
+        <span class="badge"><span class="badge-dot"></span>LOCAL · ANÁLISE ICP</span>
+        <span class="cabecalho-tags">Engenharia Industrial</span>
+      </div>
+      <h1>Classificador de <span class="destaque">ICP</span><span class="cursor">_</span></h1>
+      <p class="subtitulo">Análise de termos e evidências em sites — tudo processado localmente.</p>
+    </header>
+
+    <section class="painel painel-entrada">
+      <div class="linha-rotulo">
+        <span class="rotulo-fraco">&gt; COLE UMA URL POR LINHA</span>
+      </div>
+
+      <textarea id="txt-urls" rows="7" spellcheck="false" placeholder="https://exemplo.com.br&#10;https://outra-empresa.com.br"></textarea>
+
+      <div class="linha-botoes">
+        <input type="file" id="input-arquivo" accept=".txt" hidden>
+        <button id="btn-carregar" class="botao">↑&nbsp; CARREGAR .TXT</button>
+        <button id="btn-iniciar" class="botao botao-destaque">▶&nbsp; INICIAR CLASSIFICAÇÃO</button>
+        <button id="btn-salvar" class="botao" disabled>↓&nbsp; SALVAR CSV</button>
+      </div>
+
+      <div id="status" class="status">PRONTO · aguardando URLs</div>
+
+      <div class="progresso-trilha">
+        <div id="progresso-barra" class="progresso-barra"></div>
+      </div>
+    </section>
+
+    <div class="titulo-resultados">
+      <span class="titulo-resultados-esq"><span class="destaque">//</span> Resultados</span>
+      <span class="titulo-resultados-dir">DUPLO CLIQUE PARA ABRIR O SITE</span>
+    </div>
+
+    <section class="painel painel-tabela">
+      <table>
+        <thead>
+          <tr>
+            <th class="col-url">URL</th>
+            <th class="col-classificacao">Classificação</th>
+            <th class="col-evidencia">Evidência encontrada</th>
+          </tr>
+        </thead>
+        <tbody id="corpo-tabela">
+        </tbody>
+      </table>
+    </section>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
