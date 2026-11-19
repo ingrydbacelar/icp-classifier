@@ -14,28 +14,36 @@
 
     <header class="cabecalho">
       <div class="cabecalho-meta">
-        <span class="badge"><span class="badge-dot"></span>LOCAL · ANÁLISE ICP</span>
-        <span class="cabecalho-tags">Engenharia Industrial</span>
+        <span class="badge"><span class="badge-dot"></span>ANÁLISE ICP</span>
       </div>
       <h1>Classificador de <span class="destaque">ICP</span><span class="cursor">_</span></h1>
-      <p class="subtitulo">Análise de termos e evidências em sites — tudo processado localmente.</p>
+      <p class="subtitulo">Compara sites com os seus exemplos de ICP por similaridade de conteúdo.</p>
     </header>
 
     <section class="painel painel-entrada">
       <div class="linha-rotulo">
-        <span class="rotulo-fraco">&gt; COLE UMA URL POR LINHA</span>
+        <span class="rotulo-fraco">&gt; 1) SITES DE REFERÊNCIA (ICP) · 5 EXEMPLOS, UM POR LINHA</span>
+      </div>
+      <div class="linha-perfis">
+        <select id="sel-perfil" aria-label="Perfis de ICP salvos"><option value="">Perfis salvos</option></select>
+        <button id="btn-salvar-perfil" class="botao botao-pequeno">SALVAR PERFIL</button>
+        <button id="btn-excluir-perfil" class="botao botao-pequeno" disabled>EXCLUIR</button>
+      </div>
+      <textarea id="txt-refs" rows="5" spellcheck="false" placeholder="https://exemplo-icp-1.com.br&#10;https://exemplo-icp-2.com.br&#10;..."></textarea>
+
+      <div class="linha-rotulo" style="margin-top:20px">
+        <span class="rotulo-fraco">&gt; 2) SITES A CLASSIFICAR · UMA URL POR LINHA</span>
       </div>
 
       <textarea id="txt-urls" rows="7" spellcheck="false" placeholder="https://exemplo.com.br&#10;https://outra-empresa.com.br"></textarea>
 
       <div class="linha-botoes">
-        <input type="file" id="input-arquivo" accept=".txt" hidden>
-        <button id="btn-carregar" class="botao">↑&nbsp; CARREGAR .TXT</button>
         <button id="btn-iniciar" class="botao botao-destaque">▶&nbsp; INICIAR CLASSIFICAÇÃO</button>
         <button id="btn-salvar" class="botao" disabled>↓&nbsp; SALVAR CSV</button>
       </div>
 
-      <div id="status" class="status">PRONTO · aguardando URLs</div>
+      <div id="status" class="status"></div>
+      <div id="avisos" class="avisos"></div>
 
       <div class="progresso-trilha">
         <div id="progresso-barra" class="progresso-barra"></div>

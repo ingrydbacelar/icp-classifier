@@ -124,7 +124,7 @@ body::before {
   letter-spacing: 0.06em;
 }
 
-#txt-urls {
+#txt-urls, #txt-refs {
   width: 100%;
   min-height: 200px;
   resize: vertical;
@@ -137,8 +137,10 @@ body::before {
   outline: none;
   transition: border-color .15s, box-shadow .15s;
 }
-#txt-urls::placeholder { color: rgba(134,165,150,0.6); }
-#txt-urls:focus { border-color: var(--primaria); box-shadow: var(--brilho); }
+#txt-urls::placeholder, #txt-refs::placeholder { color: rgba(134,165,150,0.6); }
+#txt-urls:focus, #txt-refs:focus { border-color: var(--primaria); box-shadow: var(--brilho); }
+
+#txt-refs { min-height: 110px; }
 
 .linha-botoes {
   display: flex; flex-wrap: wrap;
@@ -297,3 +299,25 @@ tbody tr:last-child td { border-bottom: none; }
   .cabecalho h1 { font-size: 26px; }
   .botao { width: 100%; justify-content: center; }
 }
+
+/* Perfis salvos, avisos, evidência com trechos */
+.linha-perfis { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 10px; }
+#sel-perfil {
+  flex: 1 1 220px;
+  background: var(--entrada);
+  color: var(--texto);
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  padding: 8px 12px;
+  font: 12px var(--mono);
+  outline: none;
+}
+#sel-perfil:focus { border-color: var(--primaria); box-shadow: var(--brilho); }
+.botao-pequeno { padding: 8px 14px; font-size: 11px; }
+
+.avisos { margin-top: 8px; font: 11px var(--mono); color: var(--alerta); line-height: 1.6; }
+.avisos:empty { display: none; }
+
+.celula-evidencia { white-space: pre-line; }
+.nivel-neutro { color: var(--texto-suave); }
+.dot-neutro { background: var(--texto-suave); }
